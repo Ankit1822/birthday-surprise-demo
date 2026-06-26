@@ -1,0 +1,2093 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+:root{
+    --bg1:#0f172a;
+    --bg2:#1e293b;
+    --primary:#ff4d8d;
+    --secondary:#8b5cf6;
+    --white:#ffffff;
+    --glass:rgba(255,255,255,0.08);
+}
+
+body{
+    min-height:100vh;
+    background:
+    radial-gradient(circle at top left,#8b5cf650,transparent 35%),
+    radial-gradient(circle at bottom right,#ff4d8d40,transparent 35%),
+    linear-gradient(135deg,var(--bg1),var(--bg2));
+
+    color:var(--white);
+    overflow-x:hidden;
+}
+
+/* Animated Background */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    linear-gradient(
+        45deg,
+        transparent,
+        rgba(255,255,255,0.03),
+        transparent
+    );
+
+    animation:bgMove 8s linear infinite;
+    pointer-events:none;
+}
+
+@keyframes bgMove{
+    from{
+        transform:translateX(-100%);
+    }
+    to{
+        transform:translateX(100%);
+    }
+}
+
+/* Screens */
+
+.screen{
+    display:none;
+    min-height:100vh;
+
+    padding:30px;
+
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+
+    gap:25px;
+}
+
+.screen.active{
+    display:flex;
+}
+
+/* Headings */
+
+h1{
+    font-size:3rem;
+    font-weight:700;
+    text-shadow:
+    0 0 20px rgba(255,77,141,.6);
+}
+
+h2{
+    font-size:2rem;
+}
+
+.login-box{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    width:100%;
+    max-width:450px;
+}
+
+.login-box input{
+    padding:15px 20px;
+
+    border:none;
+    outline:none;
+
+    border-radius:15px;
+
+    font-size:1rem;
+
+    background:rgba(255,255,255,.1);
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.login-box input::placeholder{
+    color:rgba(255,255,255,.7);
+}
+
+#verifyMessage{
+    min-height:25px;
+    font-weight:600;
+}
+
+/* Buttons */
+
+button{
+    padding:14px 32px;
+    border:none;
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:1rem;
+    font-weight:600;
+
+    color:white;
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary),
+        var(--secondary)
+    );
+
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:
+    0 10px 30px rgba(255,77,141,.4);
+}
+
+/* Countdown */
+
+#count{
+    font-size:8rem;
+    animation:pulse 1s infinite;
+}
+
+@keyframes pulse{
+    0%{
+        transform:scale(1);
+    }
+    50%{
+        transform:scale(1.15);
+    }
+    100%{
+        transform:scale(1);
+    }
+}
+
+.wheel-wrapper{
+    position:relative;
+    margin:20px 0;
+}
+
+.pointer{
+    font-size:2rem;
+    position:absolute;
+    top:-30px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:10;
+}
+
+#wheel{
+    width:300px;
+    height:300px;
+    border-radius:50%;
+    border:8px solid white;
+
+    position:relative;
+
+    background:
+    conic-gradient(
+        #ff4d8d 0deg 90deg,
+        #8b5cf6 90deg 180deg,
+        #00d2d3 180deg 270deg,
+        #ff9f43 270deg 360deg
+    );
+
+    transition:
+    transform 5s cubic-bezier(.17,.67,.12,.99);
+}
+
+.wheel-text{
+    position:absolute;
+    font-size:2rem;
+}
+
+.text1{
+    top:20%;
+    left:65%;
+}
+
+.text2{
+    top:65%;
+    left:65%;
+}
+
+.text3{
+    top:65%;
+    left:20%;
+}
+
+.text4{
+    top:20%;
+    left:20%;
+}
+
+/* Gift Box */
+
+.gift-box{
+    font-size:8rem;
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.gift-box:hover{
+    transform:scale(1.15) rotate(10deg);
+}
+
+/* Gallery */
+
+.gallery-container{
+    width:100%;
+    max-width:1200px;
+
+    display:grid;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+}
+
+.card{
+    overflow:hidden;
+
+    border-radius:20px;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+    display:block;
+}
+
+/* Quiz Buttons */
+
+.quizBtn{
+    width:250px;
+}
+
+/* Cake */
+
+.cake{
+    font-size:10rem;
+
+    animation:float 2s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-15px);
+    }
+    100%{
+        transform:translateY(0);
+    }
+}
+
+/* Wheel */
+
+
+/* Glass Effect */
+
+#welcome,
+#countdown,
+#giftScreen,
+#gallery,
+#quiz,
+#cakeScreen,
+#wheelScreen,
+#finalScreen{
+
+    background:rgba(255,255,255,0.02);
+
+    backdrop-filter:blur(10px);
+}
+
+/* ========================= */
+/* Large Laptop */
+/* ========================= */
+
+@media (max-width:1200px){
+
+    h1{
+        font-size:2.6rem;
+    }
+
+    .cake,
+    #wheel{
+        font-size:8rem;
+    }
+}
+
+/* ========================= */
+/* Tablet */
+/* ========================= */
+
+@media (max-width:992px){
+
+    h1{
+        font-size:2.3rem;
+    }
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    .gift-box{
+        font-size:7rem;
+    }
+
+    #count{
+        font-size:6rem;
+    }
+}
+
+/* ========================= */
+/* Mobile */
+/* ========================= */
+
+@media (max-width:768px){
+
+    .screen{
+        padding:20px;
+    }
+
+    h1{
+        font-size:2rem;
+    }
+
+    h2{
+        font-size:1.5rem;
+    }
+
+    button{
+        width:100%;
+        max-width:300px;
+    }
+
+    .gift-box{
+        font-size:6rem;
+    }
+
+    .cake{
+        font-size:7rem;
+    }
+
+    #wheel{
+        font-size:7rem;
+    }
+
+    #count{
+        font-size:5rem;
+    }
+
+    .card img{
+        height:260px;
+    }
+}
+
+/* ========================= */
+/* Small Mobile */
+/* ========================= */
+
+@media (max-width:480px){
+
+    h1{
+        font-size:1.6rem;
+    }
+
+    h2{
+        font-size:1.2rem;
+    }
+
+    button{
+        padding:12px 20px;
+        font-size:.9rem;
+    }
+
+    .gift-box{
+        font-size:5rem;
+    }
+
+    .cake{
+        font-size:5rem;
+    }
+
+    #wheel{
+        font-size:5rem;
+    }
+
+    #count{
+        font-size:4rem;
+    }
+
+    .card img{
+        height:220px;
+    }
+}
+
+/* GAME */
+
+.game-info{
+    display:flex;
+    gap:30px;
+    font-size:1.3rem;
+    font-weight:600;
+}
+
+#gameArea{
+
+    width:90%;
+    max-width:700px;
+    height:450px;
+
+    border:2px solid rgba(255,255,255,.2);
+
+    border-radius:20px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:
+    rgba(255,255,255,.05);
+
+    backdrop-filter:blur(10px);
+}
+
+#heart{
+
+    position:absolute;
+
+    font-size:3rem;
+
+    cursor:pointer;
+
+    user-select:none;
+
+    transition:
+    left .2s ease,
+    top .2s ease;
+
+    left:50%;
+    top:50%;
+}
+
+#heart:hover{
+    transform:scale(1.2);
+}
+
+
+
+#giftReveal{
+    gap:30px;
+}
+
+.final-card{
+    max-width:800px;
+    padding:40px;
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.1);
+}
+
+.final-line{
+    margin-top:20px;
+    font-size:1.5rem;
+}
+
+.counter-box{
+    margin:25px 0;
+}
+
+.counter-box p{
+    font-size:1.3rem;
+    margin:10px 0;
+    font-weight:600;
+}
+
+.intro-text{
+    font-size:1.2rem;
+}
+
+.intro-message{
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#ffb3d9;
+}
+
+#typingText{
+    white-space: pre-line;
+}
+
+@media(max-width:480px){
+
+    #wheel{
+        width:220px;
+        height:220px;
+    }
+
+}
+
+#typingText{
+    white-space: pre-line;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    text-align: center;
+    max-width: 700px;
+    margin-top: 20px;
+    color: #ffd6e7;
+}
+
+.final-card{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.floating-heart{
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    animation: floatUp 6s linear forwards;
+    pointer-events: none;
+    z-index: 999;
+}
+
+@keyframes floatUp{
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    to{
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+#slideshowImage{
+    width:100%;
+    max-width:700px;
+    height:500px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(255,77,141,.4);
+    transition:all .5s ease;
+}
+
+#caption{
+    margin-top:20px;
+    font-size:1.2rem;
+    color:#ffb3d9;
+    font-weight:600;
+    min-height:40px;
+}
+
+@media(max-width:768px){
+
+    #slideshowImage{
+        height:350px;
+    }
+
+}
+#slideshowImage{
+    width:100%;
+    max-width:700px;
+    height:500px;
+    object-fit:cover;
+    border-radius:20px;
+
+    opacity:1;
+    transform:scale(1);
+
+    transition:
+    opacity .8s ease,
+    transform 3s ease;
+}
+
+.fade-out{
+    opacity:0;
+}
+
+.zoom{
+    transform:scale(1.08);
+}
+
+.envelope{
+
+    width:180px;
+    height:120px;
+
+    background:#ff4d8d;
+
+    position:relative;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    transition:.8s;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:3rem;
+
+    box-shadow:
+    0 10px 30px rgba(255,77,141,.4);
+
+}
+
+.envelope::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:#ff77aa;
+
+    clip-path:
+    polygon(
+        0 0,
+        50% 55%,
+        100% 0
+    );
+
+    transform-origin:top;
+
+    transition:.8s;
+
+}
+
+.envelope.open::before{
+
+    transform:
+    rotateX(180deg);
+
+}
+
+.envelope:hover{
+    transform:scale(1.15) rotate(10deg);
+}
+
+#letterContent{
+    margin-top:25px;
+    opacity:0;
+
+    transform:
+    translateY(-40px);
+
+    transition:1s;
+
+    max-height:0;
+
+    overflow:hidden;
+    animation:fadeIn .8s ease;
+}
+
+#letterContent.show{
+
+    opacity:1;
+
+    max-height:1000px;
+
+    transform:
+    translateY(0);
+
+}
+
+@keyframes fadeIn{
+
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.love-meter-container{
+    width:100%;
+    max-width:500px;
+    margin-top:30px;
+}
+
+.love-bar{
+    width:100%;
+    height:25px;
+    background:rgba(255,255,255,.15);
+    border-radius:50px;
+    overflow:hidden;
+}
+
+#loveFill{
+    width:0%;
+    height:100%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #ff4d8d,
+        #ff85b3
+    );
+
+    transition:.1s;
+}
+
+#lovePercent{
+    margin-bottom:15px;
+    font-size:1.5rem;
+}
+
+#typingText{
+    white-space: pre-line;
+    line-height: 2;
+    font-size: 1.3rem;
+    max-width: 700px;
+    text-align: center;
+}
+
+.cursor{
+    display:inline-block;
+    animation:blink .8s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:0;
+    }
+}
+
+#grandFinale{
+
+    display:none;
+
+    margin-top:30px;
+
+    animation:
+    finalePop 1s ease;
+}
+
+#grandFinale h1{
+
+    color:#ff85b3;
+
+    text-shadow:
+    0 0 10px #ff4d8d,
+    0 0 20px #ff4d8d,
+    0 0 40px #ff4d8d;
+}
+
+#grandFinale p{
+
+    margin-top:10px;
+
+    font-size:1.3rem;
+}
+
+@keyframes finalePop{
+
+    from{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+#musicToggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+
+    z-index:1000;
+
+    padding:10px 20px;
+    border-radius:30px;
+}
+
+#musicToggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:9999;
+
+    padding:10px 18px;
+
+    border-radius:30px;
+
+    font-size:.9rem;
+}
+
+/* ===================== */
+/* Cake Animation */
+/* ===================== */
+
+.cake-container{
+
+    position:relative;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    margin:30px 0;
+}
+
+#cake{
+
+    font-size:10rem;
+
+    transition:all .6s ease;
+
+}
+
+#flame{
+
+    position:absolute;
+
+    top:-15px;
+
+    font-size:2.5rem;
+
+    animation:flicker .3s infinite;
+}
+
+@keyframes flicker{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(.8);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+#cutCake{
+
+    display:none;
+    margin-top:20px;
+}
+
+#cake.cut{
+
+    animation:cutCake .5s ease;
+
+}
+
+@keyframes cutCake{
+
+    0%{
+        transform:rotate(0deg);
+    }
+
+    25%{
+        transform:rotate(3deg);
+    }
+
+    50%{
+        transform:rotate(-3deg);
+    }
+
+    75%{
+        transform:rotate(3deg);
+    }
+
+    100%{
+        transform:rotate(0deg);
+    }
+
+}
+
+#cakePiece{
+
+    position:fixed;
+
+    left:50%;
+    top:50%;
+
+    transform:
+    translate(-50%,-50%)
+    scale(.2);
+
+    opacity:0;
+
+    font-size:4rem;
+
+    z-index:9999;
+
+    pointer-events:none;
+
+}
+
+#cakePiece.show{
+
+    animation:
+    feedCake 2s forwards;
+
+}
+
+@keyframes feedCake{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,-50%)
+        scale(.2);
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+        translate(-50%,-50%)
+        scale(5);
+
+    }
+
+}
+
+#biteMessage{
+
+    position:fixed;
+
+    top:75%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    color:#fff;
+
+    text-shadow:
+    0 0 10px #ff4d8d;
+
+    opacity:0;
+
+    transition:.5s;
+
+    z-index:9999;
+
+}
+
+#biteMessage.show{
+
+    opacity:1;
+
+    animation:
+    bitePop .6s ease;
+
+}
+
+@keyframes bitePop{
+
+    0%{
+
+        transform:
+        translateX(-50%)
+        scale(.5);
+
+    }
+
+    100%{
+
+        transform:
+        translateX(-50%)
+        scale(1);
+
+    }
+
+}
+
+#knife{
+
+    position:absolute;
+
+    top:-180px;
+
+    left:50%;
+
+    transform:translateX(-50%) rotate(20deg);
+
+    font-size:4rem;
+
+    opacity:0;
+
+    transition:1s;
+
+}
+
+#knife.show{
+
+    opacity:1;
+
+    top:40px;
+
+}
+
+#knife.cut{
+
+    transform:
+    translateX(-50%)
+    rotate(-25deg);
+
+}
+
+#cakePiece,
+#biteMessage,
+#knife{
+
+    pointer-events:none;
+
+}
+
+#blowCandle,
+#cutCake{
+
+    position:relative;
+
+    z-index:10000;
+
+}
+
+.cake-container{
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+/* ========================= */
+/* Balloon Celebration */
+/* ========================= */
+
+#balloonContainer{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:999;
+
+}
+
+.balloon{
+
+    position:absolute;
+
+    bottom:-120px;
+
+    font-size:55px;
+
+    animation:flyBalloon linear forwards;
+
+}
+
+@keyframes flyBalloon{
+
+    from{
+
+        transform:translateY(0);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(-120vh);
+
+        opacity:0;
+
+    }
+
+}
+
+#roseScene{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    background:rgba(0,0,0,.35);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.6s;
+
+    z-index:9999;
+
+}
+
+#roseScene.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+#rose{
+
+    font-size:7rem;
+
+    transform:
+    translateY(250px)
+    scale(.2);
+
+}
+
+#loveMessage{
+
+    margin-top:25px;
+
+    color:white;
+
+    font-size:2.2rem;
+
+    opacity:0;
+
+}
+
+#roseScene.show #rose{
+
+    animation:
+    giveRose 2s forwards;
+
+}
+
+#roseScene.show #loveMessage{
+
+    animation:
+    showLove 1s forwards;
+
+    animation-delay:1.6s;
+
+}
+
+@keyframes giveRose{
+
+    from{
+
+        transform:
+        translateY(250px)
+        scale(.2);
+
+    }
+
+    to{
+
+        transform:
+        translateY(0)
+        scale(1);
+
+    }
+
+}
+
+@keyframes showLove{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ========================= */
+/* Broken Heart Puzzle */
+/* ========================= */
+
+#puzzleArea{
+
+    width:700px;
+    max-width:90%;
+
+    height:350px;
+
+    display:flex;
+
+    justify-content:space-between;
+    align-items:center;
+
+    position:relative;
+
+    margin-top:30px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    overflow:hidden;
+
+}
+
+.heart-piece{
+
+    font-size:7rem;
+
+    cursor:grab;
+
+    user-select:none;
+
+    transition:.3s;
+
+}
+
+.heart-piece:active{
+
+    cursor:grabbing;
+
+    transform:scale(1.1);
+
+}
+
+#leftHeart{
+
+    margin-left:80px;
+
+}
+
+#rightHeart{
+
+    margin-right:80px;
+
+}
+
+@media(max-width:768px){
+
+    #puzzleArea{
+
+        height:250px;
+
+    }
+
+    .heart-piece{
+
+        font-size:5rem;
+
+    }
+
+}
+
+/* ========================= */
+/* Premium Heart Puzzle */
+/* ========================= */
+
+#heartPuzzle{
+
+    position:relative;
+
+    width:420px;
+
+    height:220px;
+
+    margin:40px auto;
+
+}
+
+.heart-half{
+
+    position:absolute;
+
+    width:140px;
+
+    height:140px;
+
+    background:#ff3366;
+
+    cursor:grab;
+
+    transition:.4s;
+
+}
+
+/* LEFT */
+
+.left{
+
+    left:30px;
+
+    top:40px;
+
+    border-radius:
+    80px 80px 0 80px;
+
+    transform:
+    rotate(-45deg);
+
+}
+
+/* RIGHT */
+
+.right{
+
+    right:30px;
+
+    top:40px;
+
+    border-radius:
+    80px 80px 80px 0;
+
+    transform:
+    rotate(45deg);
+
+}
+
+#puzzleSuccess{
+
+    opacity:0;
+
+    font-size:2rem;
+
+    margin-top:30px;
+
+    color:#ffb6d9;
+
+}
+
+#svgPuzzle{
+
+    position:relative;
+
+    width:420px;
+
+    height:250px;
+
+    margin:40px auto;
+
+}
+
+#leftHeart{
+
+    position:absolute;
+
+    left:20px;
+    top:20px;
+
+    width:150px;
+
+}
+
+#rightHeart{
+
+    position:absolute;
+
+    right:20px;
+    top:20px;
+
+    width:150px;
+
+    cursor:grab;
+
+    transition:
+    transform .2s,
+    filter .2s,
+    left .15s,
+    top .15s;
+
+}
+
+#fullHeart{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:180px;
+
+    transform:translate(-50%,-50%) scale(0);
+
+    opacity:0;
+
+    transition:.6s;
+
+}
+
+.dragging{
+
+    transform:scale(1.15) rotate(8deg);
+
+    filter:
+    drop-shadow(0 0 20px #ff4d8d);
+
+}
+
+/* ========================= */
+/* Bouquet Screen */
+/* ========================= */
+
+.bouquet-card{
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    padding:40px;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    max-width:700px;
+
+}
+
+#bouquet{
+
+    font-size:9rem;
+
+    margin:40px 0;
+
+    opacity:0;
+
+    transform:translateY(250px) scale(.4);
+
+    transition:1.2s ease;
+
+}
+
+#bouquet.show{
+
+    opacity:1;
+
+    transform:translateY(0) scale(1);
+
+}
+
+#bouquetMessage{
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.8s;
+
+    color:#ffd5e8;
+
+}
+
+#bouquetMessage.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.rose-text{
+
+    opacity:0;
+
+    margin-top:15px;
+
+    transition:1s;
+
+}
+
+.rose-text.show{
+
+    opacity:1;
+
+}
+
+#acceptRose{
+
+    margin-top:30px;
+
+    opacity:0;
+
+    transform:scale(.6);
+
+    transition:.6s;
+
+}
+
+#acceptRose.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+/* ========================= */
+/* Bouquet Screen */
+/* ========================= */
+
+.bouquet-card{
+
+    max-width:700px;
+
+    padding:45px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+}
+
+#bouquet{
+
+    font-size:9rem;
+
+    opacity:0;
+
+    transform:translateY(220px) scale(.3);
+
+    transition:1.2s cubic-bezier(.22,1,.36,1);
+
+}
+
+#bouquet.show{
+
+    opacity:1;
+
+    transform:translateY(0) scale(1);
+
+}
+
+#bouquetMessage{
+
+    margin-top:20px;
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.8s;
+
+    color:#ffd6e7;
+
+}
+
+#bouquetMessage.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.rose-text{
+
+    margin-top:15px;
+
+    opacity:0;
+
+    transition:.8s;
+
+}
+
+.rose-text.show{
+
+    opacity:1;
+
+}
+
+#acceptRose{
+
+    margin-top:35px;
+
+    opacity:0;
+
+    transform:scale(.5);
+
+    transition:.6s;
+
+}
+
+#acceptRose.show{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.heartbeat{
+
+    animation:
+    heartBeat 1s infinite;
+
+}
+
+@keyframes heartBeat{
+
+    0%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+
+    50%{
+        transform:translate(-50%,-50%) scale(1.18);
+    }
+
+    100%{
+        transform:translate(-50%,-50%) scale(1);
+    }
+
+}
+
+/* ===========================================
+   RESPONSIVE PATCH
+=========================================== */
+
+/* Laptop */
+
+@media (max-width:1200px){
+
+    .screen{
+        padding:25px;
+    }
+
+    .final-card,
+    .bouquet-card{
+        width:90%;
+    }
+
+}
+
+/* Tablet */
+
+@media (max-width:992px){
+
+    h1{
+        font-size:2.3rem;
+    }
+
+    h2{
+        font-size:1.8rem;
+    }
+
+    .screen{
+        padding:20px;
+    }
+
+    #wheel{
+        width:260px;
+        height:260px;
+    }
+
+    #svgPuzzle{
+        width:340px;
+        height:220px;
+    }
+
+    #leftHeart,
+    #rightHeart{
+        width:120px;
+    }
+
+    #fullHeart{
+        width:150px;
+    }
+
+    #cake{
+        font-size:8rem;
+    }
+
+    #bouquet{
+        font-size:7rem;
+    }
+
+    #slideshowImage{
+        width:100%;
+        height:400px;
+    }
+
+}
+
+/* Mobile */
+
+@media (max-width:768px){
+
+    .screen{
+        padding:15px;
+        gap:18px;
+    }
+
+    h1{
+        font-size:1.8rem;
+    }
+
+    h2{
+        font-size:1.4rem;
+    }
+
+    p{
+        font-size:.95rem;
+    }
+
+    button{
+
+        width:100%;
+        max-width:300px;
+
+        padding:14px;
+
+    }
+
+    .login-box{
+
+        width:100%;
+
+    }
+
+    .login-box input{
+
+        width:100%;
+
+    }
+
+    #count{
+
+        font-size:5rem;
+
+    }
+
+    #wheel{
+
+        width:220px;
+        height:220px;
+
+    }
+
+    .wheel-text{
+
+        font-size:1.4rem;
+
+    }
+
+    #cake{
+
+        font-size:6rem;
+
+    }
+
+    #knife{
+
+        font-size:2.5rem;
+
+        top:-120px;
+
+    }
+
+    #flame{
+
+        font-size:2rem;
+
+    }
+
+    #gameArea{
+
+        width:100%;
+
+        height:320px;
+
+    }
+
+    #heart{
+
+        font-size:2.2rem;
+
+    }
+
+    #svgPuzzle{
+
+        width:300px;
+
+        height:200px;
+
+    }
+
+    #leftHeart,
+    #rightHeart{
+
+        width:100px;
+
+    }
+
+    #fullHeart{
+
+        width:130px;
+
+    }
+
+    #bouquet{
+
+        font-size:6rem;
+
+    }
+
+#slideshowImage{
+
+    width:min(90vw,380px);
+
+    aspect-ratio:3/4;
+
+    object-fit:contain;
+
+    background:rgba(255,255,255,.05);
+
+    object-position:center;
+
+    border-radius:25px;
+
+    border:4px solid rgba(255,255,255,.15);
+
+    box-shadow:
+        0 15px 40px rgba(255,77,141,.35);
+
+    transition:
+        opacity .8s ease,
+        transform 3s ease;
+
+}
+
+    #typingText{
+
+        font-size:1rem;
+
+        line-height:1.8;
+
+    }
+
+    .game-info{
+
+        flex-direction:column;
+
+        gap:10px;
+
+        align-items:center;
+
+    }
+
+}
+
+/* Small Mobile */
+
+@media (max-width:480px){
+
+    h1{
+
+        font-size:1.5rem;
+
+    }
+
+    h2{
+
+        font-size:1.2rem;
+
+    }
+
+    p{
+
+        font-size:.9rem;
+
+    }
+
+    #count{
+
+        font-size:4rem;
+
+    }
+
+    #cake{
+
+        font-size:5rem;
+
+    }
+
+    #bouquet{
+
+        font-size:5rem;
+
+    }
+
+    #wheel{
+
+        width:180px;
+
+        height:180px;
+
+    }
+
+    .wheel-text{
+
+        font-size:1.1rem;
+
+    }
+
+    #slideshowImage{
+
+        height:220px;
+
+    }
+
+    #gameArea{
+
+        height:260px;
+
+    }
+
+    #heart{
+
+        font-size:1.8rem;
+
+    }
+
+    #svgPuzzle{
+
+        width:250px;
+
+        height:180px;
+
+    }
+
+    #leftHeart,
+    #rightHeart{
+
+        width:80px;
+
+    }
+
+    #fullHeart{
+
+        width:110px;
+
+    }
+
+    #musicToggle{
+
+        top:10px;
+
+        right:10px;
+
+        font-size:.75rem;
+
+        padding:8px 12px;
+
+    }
+
+}
+
+#galleryNext{
+
+    opacity:0;
+
+    pointer-events:none;
+
+    transform:translateY(20px);
+
+    transition:.5s ease;
+
+}
+
+#galleryNext.show{
+
+    opacity:1;
+
+    pointer-events:auto;
+
+    transform:translateY(0);
+
+}

@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Music -->
+<audio id="bgMusic" loop preload="none"></audio>
+<button id="musicToggle" style="display: none;">
+    🔊 Music ON
+</button>
+    <section id="welcome" class="screen active">
+
+    <h1>❤️ A Special Surprise For You ❤️</h1>
+
+    <div class="login-box">
+
+        <input
+            type="text"
+            id="nameInput"
+            placeholder="Enter Your Name ❤️"
+        >
+
+        <button id="verifyBtn">
+            Unlock Surprise 🎁
+        </button>
+
+        <p id="verifyMessage"></p>
+
+    </div>
+
+</section>
+
+    <!-- Countdown Screen -->
+    <section id="countdown" class="screen">
+        <h1 id="count">3</h1>
+    </section>
+
+    <section id="giftScreen" class="screen">
+        <h2>Click The Gift 🎁</h2>
+
+        <div class="gift-box" id="giftBox">
+            🎁
+        </div>
+    </section>
+
+    <section id="introScreen" class="screen">
+
+    <div class="final-card">
+
+        <h1>🎂 Happy Birthday My Love ❤️</h1>
+
+        <p>You Have Been On This Earth For</p>
+
+        <div class="counter-box">
+            <p id="years"></p>
+            <p id="days"></p>
+            <p id="hours"></p>
+            <p id="seconds"></p>
+        </div>
+
+        <p class="intro-message">
+            And Every Second Makes You More Special ❤️
+        </p>
+
+        <button id="nextIntroBtn">
+            Continue My Love ❤️
+        </button>
+
+    </div>
+
+</section>
+
+    <!-- Gallery Screen -->
+   <section id="gallery" class="screen">
+
+    <h2>📸 Our Memories ❤️</h2>
+
+    <img id="slideshowImage" src="" alt="Memory">
+
+    <p id="caption"></p>
+
+    <button id="galleryNext">
+        Next ❤️
+    </button>
+
+</section>
+
+    <section id="quiz" class="screen">
+        <h2>😎 Friendship Quiz</h2>
+        <p>Who is your best friend ?</p>
+        <button class="quizBtn">
+            Me 😎
+        </button>
+
+        <button class="quizBtn">
+            Obviously Me 😎
+        </button>
+
+    </section>
+
+    <section id="cakeScreen" class="screen">
+
+    <h2>🎂 Make A Wish 🎂</h2>
+
+    <div class="cake-container">
+
+        <div id="cake">
+            🎂
+        </div>
+
+        <div id="flame">
+            🔥
+        </div>
+
+        <div id="knife">
+    🔪
+</div>
+
+    </div>
+
+    <button id="blowCandle">
+        Blow Candle 🕯️
+    </button>
+
+    <button id="cutCake" style="display:none;">
+        🔪 Cut Cake
+    </button>
+ 
+    <div id="cakePiece">
+    🍰
+</div>
+
+<div id="biteMessage">
+
+    😋 Take A Bite ❤️
+
+</div>
+
+</section>
+
+        <!-- Heart Game Screen -->
+
+<section id="gameScreen" class="screen">
+
+    <h2>❤️ Catch The Heart ❤️</h2> 
+
+    <p>
+        Catch 15 Hearts in 30 Seconds
+    </p>
+
+    <div class="game-info">
+        <span id="score">Score: 0</span>
+        <span id="timer">Time: 30</span>
+    </div>
+
+    <div id="gameArea">
+
+        <div id="heart">
+            ❤️
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Broken Heart Puzzle -->
+
+<section id="puzzleScreen" class="screen">
+
+    <h2>💔 Fix Our Broken Heart ❤️</h2>
+
+    <p>
+        Drag the missing piece to complete our heart.
+    </p>
+
+    <div id="svgPuzzle">
+
+        <img
+            id="leftHeart"
+            src="images/heart-left.svg"
+            draggable="false"
+        >
+
+        <img
+            id="rightHeart"
+            src="images/heart-right.svg"
+            draggable="false"
+        >
+
+        <img
+    id="fullHeart"
+    src="images/heart-full.svg"
+    alt="Heart">
+
+    </div>
+
+    <p id="puzzleSuccess">
+        ❤️ Our Hearts Are Together Forever ❤️
+    </p>
+
+</section>
+
+<section id="bouquetScreen" class="screen">
+
+    <div class="bouquet-card">
+
+        <h1>🌹 For You ❤️</h1>
+
+        <div id="bouquet">
+            🌹
+        </div>
+
+        <h2 id="bouquetMessage">
+            I Love You Baccha ❤️
+        </h2>
+
+        <p class="rose-text">
+            Every flower reminds me of your beautiful smile 🌹
+        </p>
+
+        <button id="acceptRose">
+            💖 Accept My Rose
+        </button>
+
+    </div>
+
+</section>
+
+
+         <!-- Wheel Screen -->
+   <section id="wheelScreen" class="screen">
+
+    <h2>🎰 Spin The Lucky Wheel</h2>
+
+    <div class="wheel-wrapper">
+
+        <div class="pointer">▼</div>
+
+        <div id="wheel">
+
+            <div class="wheel-text text1">🍫</div>
+            <div class="wheel-text text2">💖</div>
+            <div class="wheel-text text3">🎁</div>
+            <div class="wheel-text text4">🌟</div>
+
+        </div>
+
+    </div>
+
+    <button id="spinBtn">Spin Wheel</button>
+
+    <p id="wheelResult"></p>
+
+</section>
+
+    <!-- Gift Reveal Screen -->
+
+<section id="giftReveal" class="screen">
+
+    <h1>🎉 Congratulations 🎉</h1>
+
+    <h2>You Unlocked The Surprise Gift ❤️</h2>
+
+    <button id="openGiftBtn">
+        Open Gift 🎁
+    </button>
+
+</section>
+
+<section id="letterScreen" class="screen">
+
+    <div class="final-card">
+
+        <h1>💌 Secret Letter 💌</h1>
+
+        <div class="envelope" id="envelope">
+            ✉️
+        </div>
+
+        <p>
+            Click The Envelope ❤️
+        </p>
+
+        <div id="letterContent">
+
+            <h2>❤️ Dear Rushi  ❤️</h2>
+
+            <p>
+                You are one of the most special people in my life.
+
+                Thank you for every smile,
+                every laugh,
+                and every beautiful memory.
+
+                May your birthday be filled with happiness,
+                success and lots of love.
+
+                Happy Birthday Princess 👑❤️
+                Mahadev Bless you Baccha ❤️
+            </p>
+
+            <button id="letterNextBtn">
+                Continue ❤️
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+      <!-- Final Message -->
+<section id="finalScreen" class="screen">
+
+    <div class="final-card">
+
+        <h1>💌 A Message For You 💌</h1>
+
+        <div id="typingText"></div>
+
+        <div class="love-meter-container">
+
+    <h2 id="lovePercent">
+        ❤️ Love Meter: 0%
+    </h2>
+
+    <div class="love-bar">
+
+        <div id="loveFill"></div>
+
+    </div>
+
+</div>
+
+        <p class="final-line">
+            💖 Forever Friends 💖
+        </p>
+
+        <button id="replayBtn">
+    🔄 Watch Again
+</button>
+
+    </div>
+
+    <div id="roseScene">
+
+    <div id="rose">
+        🌹
+    </div>
+
+    <h2 id="loveMessage">
+        I Love You Baccha ❤️
+    </h2>
+
+</div>
+
+    <div id="grandFinale">
+
+    <h1>
+        🎂 Happy Birthday Rushi ❤️
+    </h1>
+
+    <p>
+        You Are Truly Special ✨
+    </p>
+
+</div>
+
+</section>
+<div id="balloonContainer"></div>
+ <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <script src="index.js"></script>
+
+   
+    
+</body>
+
+</html>
