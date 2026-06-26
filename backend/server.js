@@ -2,31 +2,28 @@ const express = require("express");
 const path = require("path");
 const session = require("express-session");
 
+
+
 const app = express();
+
+app.set("trust proxy", 1);
 
 app.use(express.json());
 
+
 app.use(session({
-
-    secret:"birthday-secret",
-
-    resave:false,
-
-    saveUninitialized:false,
-
-    cookie:{
-
-        httpOnly:true,
-
-        maxAge:10 * 60 * 1000,
-
+    secret: "birthday-secret",
+    resave: false,
+    saveUninitialized: false,
+    proxy: true,
+    cookie: {
+        httpOnly: true,
         secure: process.env.NODE_ENV === "production",
-
-        sameSite:"lax"
-
+        sameSite: "lax",
+        maxAge: 10 * 60 * 1000
     }
-
 }));
+
 
 app.use(express.static(path.join(__dirname, "../frontend")));
 
@@ -39,6 +36,8 @@ app.get("/", (req, res) => {
 });
 
 app.post("/verify", (req, res) => {
+
+    console.log("verify request received:", req.body);
 
     const { name } = req.body;
 
@@ -149,8 +148,8 @@ app.post("/logout", (req, res) => {
 });
 
 
-app.listen(3000, () => {
+const PORT = process.env.PORT || 3000;
 
-    console.log("Server Running...");
-
+app.listen(PORT, () => {
+    console.log(`Server Running on ${PORT}`);
 });
