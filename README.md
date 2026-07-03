@@ -34,11 +34,9 @@ npm install
 npm start
 ```
 
-Open:
+## 🌐 Live Demo
 
-```
-http://localhost:3000
-```
+**Live Website:** https://birthday-surprise-demo.onrender.com
 
 ## 📁 Note
 
