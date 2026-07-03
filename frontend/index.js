@@ -16,7 +16,7 @@ document.getElementById('nameInput');
 const verifyMessage =
 document.getElementById('verifyMessage');
 
-// const gfName = "Rushi"; // GF ka naam yaha daal
+// const Name = "XYZ"; // Replace with your desired name
 
 verifyBtn.addEventListener("click", async () => {
 
@@ -46,7 +46,7 @@ verifyBtn.addEventListener("click", async () => {
         if(data.success){
 
             verifyMessage.textContent =
-            "💖 Access Granted My Love 💖";
+            "💖 Access Granted My Friend 💖";
 
             bgMusic.src = "/music/bgMusic.mp3";
 
@@ -107,68 +107,21 @@ function startCountdown() {
 
 const memories = [
 {
-    image:"/gallery/firstImage.jpg",
+    image:"gallery/img1.jpg",
     text:"❤️ The Day when I Met You after along time  ❤️"
 },
 {
-    image:"/gallery/bestMemory.jpg",
-    text:"😊 My Favorite Smile 😊"
+    image:"/gallery/img2.jpg",
+    text:"😊 Seating Together 😊"
 },
 {
-    image:"/gallery/boat.jpg",
+    image:"/gallery/img3.jpg",
     text:"💖 A Beautiful Memory 💖"
 },
 {
-    image:"/gallery/romanticPose.jpg",
+    image:"/gallery/img4.jpg",
     text:"🌹 Forever Special 🌹"
 },
-{
-    image:"/gallery/barsana.jpg",
-    text: "🌹Shree Dham Barsana🌹"
-},
-{
-    image:"/gallery/love.jpg",
-    text:"Love Forever...😊"
-},
-{
-     image:"/gallery/ramanRati.jpg",
-    text:"My Dream with You...💕💕"
-},
-{
-     image:"/gallery/premMandirFront.jpg",
-    text:"...❤️🥰🖤..."
-},
-{
-     image:"/gallery/premMandirEvening.jpg",
-    text:"Prem Mandir with My Wife....❤️🖤"
-},
-{
-     image:"/gallery/premMandirBack.jpg",
-    text:"Couple vibe...😉"
-},
-{
-     image:"/gallery/perfectImage.jpg",
-    text:"My Favorite...🥰"
-},
-{
-     image:"/gallery/Mumbai.jpg",
-    text:"Dream Image of My Life....💕💕"
-},
-{
-     image:"/gallery/LoveLife.jpg",
-    text:"Lovely Moment....😊"
-},
-{
-     image:"/gallery/loveBirds.jpg",
-    text:"Best Smile on Her Face....😊"
-},
-{
-    image:"/gallery/hath.jpg",
-    text:"Holding Her Hand....💖"
-},{
-    image:"/gallery/evening.jpg",
-    text:"Best Evening with My Love 💖"
-}
 
 ];
 
@@ -477,7 +430,7 @@ function startGame(){
             if(score < 15){
 
                 alert(
-                    '😢 Time Khatam hogya! Try Again Baccha'
+                    '😢 Time Khatam hogya! Try Again '
                 );
 
                 startGame();
@@ -551,12 +504,13 @@ spinBtn.addEventListener('click', () => {
 const typingText = document.getElementById('typingText');
 
 const message =
-`  Happy Birthday My Love ❤️
+`  Happy Birthday Dear Friend ❤️
 
 Thank You For Being Such An Amazing My Best Friend.
 
 May Your Day Be Filled With Happiness,
 Laughter And Lots Of Beautiful Memories.
+Thank You For Being Such An Amazing Friend.
 
 Stay Happy,
 Stay Blessed,
@@ -622,7 +576,7 @@ function startLoveMeter(){
         `${percent}%`;
 
         lovePercent.textContent =
-        `❤️ Love Meter: ${percent}%`;
+        `❤️ Friendship Meter: ${percent}%`;
 
         if(percent >= 100){
 
@@ -717,7 +671,7 @@ letterNextBtn.addEventListener('click',()=>{
 
 });
 
-const birthDate = new Date("2007-06-27");
+const birthDate = new Date("2000-01-01");
 
 function updateBirthdayCounter(){
 

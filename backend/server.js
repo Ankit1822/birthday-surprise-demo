@@ -43,7 +43,7 @@ app.post("/verify", (req, res) => {
 
     if (
         name &&
-        name.toLowerCase() === "rushi"
+        name.toLowerCase() === "xyz"
     ) {
 
         req.session.loggedIn = true;
